@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>European Robin Facts</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f8ff;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .container {
+            text-align: center;
+        }
+
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background-color: #ff4500;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+        }
+
+        button:hover {
+            background-color: #e03e00;
+        }
+
+        .fact-display {
+            margin-top: 20px;
+            font-size: 18px;
+            color: #333;
+            opacity: 0;
+            transition: opacity 0.5s ease-in-out;
+        }
+
+        .fact-display.show {
+            opacity: 1;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>European Robin Facts</h1>
+        <button id="factButton">Show Random Fact</button>
+        <div id="factDisplay" class="fact-display"></div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const facts = [
+                { "fact": "The European Robin is scientifically known as Erithacus rubecula." },
+                { "fact": "Robins are known for their distinctive orange-red breast." },
+                { "fact": "They are commonly found across Europe, Western Asia, and North Africa." },
+                { "fact": "Robins are territorial birds and are known to be aggressive in defending their territory." },
+                { "fact": "They are primarily insectivorous, feeding on insects and worms." },
+                { "fact": "Robins are known for their melodious song, which is often heard during the breeding season." },
+                { "fact": "The average lifespan of a Robin is about 2 years, although some can live longer." },
+                { "fact": "Robins are often associated with Christmas in Western culture." },
+                { "fact": "They build their nests using grass, leaves, and moss, often in hidden locations." },
+                { "fact": "Robins are known to be one of the first birds to start singing at dawn." }
+            ];
+
+            const factButton = document.getElementById('factButton');
+            const factDisplay = document.getElementById('factDisplay');
+
+            factButton.addEventListener('click', () => {
+                const randomIndex = Math.floor(Math.random() * facts.length);
+                factDisplay.textContent = facts[randomIndex].fact;
+                factDisplay.classList.add('show');
+            });
+        });
+    </script>
+</body>
+</html>
